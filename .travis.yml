@@ -10,7 +10,7 @@ deploy:
   user: hydrosquall
 
 install:
-  - install_pandas.sh
+  - tools/install_pandas.sh
   - python setup.py develop
   - pip install -U pytest-cov codecov vcrpy
   # - pip install -U tox-travis pytest
