@@ -24,8 +24,8 @@ python:
   # - 2.6
 
 env:
-  WITH_PANDAS=false
-  WITH_PANDAS=true
+  - WITH_PANDAS=false
+  - WITH_PANDAS=true
 
 script:
   - export TIINGO_API_KEY=0000000000000000000000000000000000000000
