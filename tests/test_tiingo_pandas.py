@@ -60,7 +60,10 @@ class TestTiingoWithPython(TestCase):
 class TestTiingoWithoutPython(TestCase):
 
     def setUp(self):
-        self._client = TiingoClient()
+        if pandas_is_installed:
+            self.skipTest("test_tiingo_without_pandas: Pandas not installed.")
+        else:
+            self._client = TiingoClient()
 
     @vcr.use_cassette('tests/fixtures/ticker_price_pandas_single.yaml')
     def test_get_dataframe_without_pandas(self):
