@@ -62,6 +62,7 @@ class TestTiingoWithoutPython(TestCase):
     def setUp(self):
         self._client = TiingoClient()
 
+    @vcr.use_cassette('tests/fixtures/ticker_price_pandas_single.yaml')
     def test_get_dataframe_without_pandas(self):
         with self.assertRaises(InstallPandasException):
             self._client.get_dataframe("GOOGL")
