@@ -60,8 +60,7 @@ class TestTiingoWithPython(TestCase):
 class TestTiingoWithoutPython(TestCase):
 
     def setUp(self):
-        if not pandas_is_installed:
-            self._client = TiingoClient()
+        self._client = TiingoClient()
 
     def test_get_dataframe_without_pandas(self):
         with self.assertRaises(InstallPandasException):
